@@ -1,0 +1,11 @@
+<div class="fixed-top d-flex justify-content-between align-items-center p-5 bg-light" style="height: 100px;"  style="background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%); color: #333;">
+    <div class="flex-grow-1">
+        <div class="loader"></div>
+    </div>
+    <div>
+        <ng-container *ngFor="let menueItem of menu">
+            <a class="navbar-brand mx-3" [href]="menueItem.link"> {{ menueItem.name }} </a>
+        </ng-container>
+    </div>
+</div>
+<div style="height: 100px;"></div>

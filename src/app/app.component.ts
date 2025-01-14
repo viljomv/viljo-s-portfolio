@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-portfolio';
+  constructor() {
+    
+  }
+  ngOnInit(): void {
+    console.log(1+2)  
+  }
 }

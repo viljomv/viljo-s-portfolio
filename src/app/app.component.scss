@@ -1,0 +1,45 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Left side (name) styling */
+  .navbar-left .navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff6f91, #ff9671, #ffc75f, #f9f871);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+    animation: colorShift 5s ease-in-out infinite;
+  }
+  
+  /* Gradient animation */
+  @keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Right side (menu items) styling */
+  .navbar-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .navbar-right a.active {
+    border-bottom: 2px solid #ffc75f;
+  }
+  
+  .navbar-right a:hover {
+    color: #ffc75f;
+  }

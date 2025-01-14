@@ -1,0 +1,100 @@
+/* About Section Styling */
+.about-section {
+    background-color: #f1f1f1; /* Soft background color */
+    padding: 80px 15px; /* Top and bottom padding */
+    border-radius: 10px; /* Rounded corners for the section */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin-bottom: 50px; /* Space at the bottom */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.about-title {
+    font-size: 2.5rem; /* Large title font */
+    font-weight: 700; /* Bold font */
+    color: #333; /* Dark color for the title */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Spacing between letters */
+}
+
+.title-underline {
+    width: 80px;
+    height: 3px;
+    background-color: #007bff; /* Blue underline */
+    margin: 10px auto; /* Center the underline */
+}
+
+.about-subtitle {
+    font-size: 1.2rem; /* Medium size subtitle text */
+    color: #666; /* Subtle gray color */
+    text-align: center;
+    margin-bottom: 30px; /* Space below the subtitle */
+    line-height: 1.6; /* Spacing between lines */
+}
+
+/* Content Styling */
+.about-content {
+    max-width: 900px; /* Max width for the content */
+    margin: 0 auto; /* Center the content */
+    padding: 20px;
+    background-color: #fff; /* White background for content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for content */
+}
+
+/* Paragraph Styling */
+.about-content p {
+    font-size: 1rem;
+    color: #555; /* Medium gray text */
+    line-height: 1.8; /* Spacing between lines for readability */
+    margin-bottom: 20px; /* Spacing between paragraphs */
+}
+
+/* Link Styling */
+.about-content a {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.about-content a:hover {
+    color: #0056b3; /* Darker blue when hovering over links */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Button Styling */
+.contact-button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    padding: 12px 30px; /* Padding inside the button */
+    font-size: 1.1rem; /* Medium font size */
+    border: none;
+    border-radius: 30px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    display: block;
+    margin: 0 auto; /* Center the button */
+}
+
+.contact-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2rem; /* Smaller title for smaller screens */
+    }
+
+    .about-content {
+        padding: 15px; /* Less padding for smaller screens */
+    }
+
+    .about-content p {
+        font-size: 0.95rem; /* Slightly smaller text for paragraphs */
+    }
+
+    .contact-button {
+        padding: 10px 25px; /* Reduced padding on smaller screens */
+    }
+}

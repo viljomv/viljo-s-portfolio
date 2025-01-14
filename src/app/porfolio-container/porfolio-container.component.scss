@@ -1,0 +1,99 @@
+/* Navbar background shadow for better visibility */
+.navbar {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active link style with smooth transition */
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #007bff; /* Blue color */
+    background-color: rgba(0, 123, 255, 0.1); /* Light background on active */
+    border-radius: 5px; /* Rounded corners for active links */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+/* Hover effect for navbar links */
+.navbar-nav .nav-link:hover {
+    color: #0056b3; /* Light blue text color on hover */
+    background-color: rgba(0, 123, 255, 0.2); /* Light blue background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for navbar brand */
+.navbar-brand:hover {
+    color: #007bff; /* Light blue color for the brand on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Smooth scroll and active section with padding */
+.scroll-section {
+    padding: 80px 0;
+    transition: background-color 0.5s ease; /* Smooth transition for background color */
+}
+
+/* Section-specific background colors */
+.scroll-section#scrollspyHeading1 {
+    background-color: #f8f9fa;
+}
+
+.scroll-section#scrollspyHeading2 {
+    background-color: #e9ecef;
+}
+
+.scroll-section#scrollspyHeading3 {
+    background-color: #f8f9fa;
+}
+
+.scroll-section#scrollspyHeading4 {
+    background-color: #e9ecef;
+}
+
+/* Smooth scroll for anchor links */
+body {
+    scroll-behavior: smooth;
+}
+
+/* Add some spacing between navbar items */
+.navbar-nav .nav-item {
+    margin-right: 15px;
+}
+
+/* Customize navbar brand for better visibility */
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Make the navbar background a gradient for a sleek effect */
+.navbar {
+    background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(0, 255, 255, 1) 100%);
+}
+
+/* Change the toggler icon color */
+.navbar-toggler-icon {
+    background-color: white;
+}
+
+/* Adjust container padding for responsiveness */
+.container-fluid {
+    padding: 0 15px;
+}
+// .scroll-section {
+//     background-color: #f0f0f0; /* Change this to your desired background color */
+// }
+// .scroll-section {
+//     background-color: #f8f9fa; /* Light neutral */
+// }
+
+// .scroll-section {
+//     background-color: #e9ecef;
+// }
+.scroll-section {
+    background-color: #f7f3f2; /* Pastel blush */
+}
+// .scroll-section {
+//     background-color: #dee2e6; /* Medium gray */
+// }

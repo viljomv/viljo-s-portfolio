@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+nav {
+    display: flex;
+    gap: 1rem;
+    background-color: #333;
+    padding: 1rem;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .active {
+    border-bottom: 2px solid white;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .text-justify-ui{
+    text-align: justify;
+  }
+
+  .point-ui {
+    cursor: pointer;
+  }
+  
+  .click-ui {
+    cursor: pointer;
+  
+    &:hover {
+      transform: scale(1.03);
+    }
+  
+    &:active {
+      transform: scale(.98);
+    }
+  }
+
+  // width
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+// Track
+::-webkit-scrollbar-track {
+  background: #e8e6e6;
+}
+
+// Handle
+::-webkit-scrollbar-thumb {
+  background: rgb(181, 179, 179);
+}
+
+// Handle on hover
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(181, 179, 179);
+}
+  
