@@ -1,0 +1,19 @@
+<section id="experience" class="section container">
+    <div class="section-header" appScrollReveal>
+        <h2 class="section-title">Experience</h2>
+        <div class="line"></div>
+    </div>
+    <div class="timeline">
+        <div class="timeline-item" *ngFor="let exp of experiences; let i = index" appScrollReveal
+            [delay]="i * 0.2 + 's'">
+            <div class="timeline-content">
+                <h3>{{ exp.position }}</h3>
+                <h4>{{ exp.company }}</h4>
+                <span class="date">{{ exp.duration }} &bull; {{ exp.location }}</span>
+                <ul *ngIf="exp.responsibilities">
+                    <li *ngFor="let resp of exp.responsibilities">{{ resp }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

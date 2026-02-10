@@ -1,0 +1,13 @@
+<section id="education" class="section container">
+    <div class="section-header" appScrollReveal>
+        <h2 class="section-title">Education</h2>
+        <div class="line"></div>
+    </div>
+    <div class="education-grid">
+        <div class="card" *ngFor="let edu of education; let i = index" appScrollReveal [delay]="i * 0.2 + 's'">
+            <h3>{{ edu.degree }}</h3>
+            <h4>{{ edu.institution }}</h4>
+            <span class="year">{{ edu.year }}</span>
+        </div>
+    </div>
+</section>
