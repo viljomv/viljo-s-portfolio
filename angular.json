@@ -24,7 +24,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/_redirects",
-              "src/.htaccess"
+              "src/.htaccess",
+              "src/CNAME"
             ],
             "styles": [
               "src/styles.css"
