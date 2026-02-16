@@ -1,5 +1,5 @@
 .section {
-    padding: 4rem 2rem;
+    padding: 4rem 1.5rem;
 }
 
 .section-header {
@@ -22,8 +22,15 @@
 
 .timeline {
     border-left: 2px solid var(--accent);
-    margin-left: 20px;
-    padding-left: 30px;
+    margin-left: 10px;
+    padding-left: 20px;
+}
+
+@media (min-width: 768px) {
+    .timeline {
+        margin-left: 20px;
+        padding-left: 30px;
+    }
 }
 
 .timeline-item {

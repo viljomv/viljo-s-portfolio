@@ -1,4 +1,12 @@
 <section class="hero container">
+    <div class="social-sidebar">
+        <a *ngFor="let link of socialLinks" [href]="link.url" [attr.aria-label]="link.label" target="_blank"
+            class="social-link" appScrollReveal [delay]="'0.8s'">
+            <span class="dot"></span>
+            {{ link.label }}
+        </a>
+    </div>
+
     <div class="content">
         <h1 class="title" appScrollReveal [delay]="'0s'">
             Hi, I'm <span class="highlight">VILJO M V</span><br>
@@ -11,7 +19,27 @@
             <a href="#contact" class="btn btn-outline" style="margin-left: 1rem;">Contact Me</a>
         </div>
     </div>
+
     <div class="visual" appScrollReveal [delay]="'0.6s'">
         <div class="circle"></div>
+        <div class="floating-cards">
+            <div *ngFor="let card of featureCards; let i = index" class="feature-card"
+                [style.animation-delay]="i * 0.5 + 's'">
+                <span class="icon">{{ card.icon }}</span>
+                <div class="card-text">
+                    <h4>{{ card.title }}</h4>
+                    <p>{{ card.text }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-indicator" appScrollReveal [delay]="'1s'">
+        <a href="#about">
+            <span>Scroll Down</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </a>
     </div>
 </section>

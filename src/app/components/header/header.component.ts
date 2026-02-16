@@ -5,4 +5,14 @@ import { Component } from '@angular/core';
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.css']
 })
-export class HeaderComponent { }
+export class HeaderComponent {
+    isMenuOpen = false;
+
+    toggleMenu() {
+        this.isMenuOpen = !this.isMenuOpen;
+    }
+
+    closeMenu() {
+        this.isMenuOpen = false;
+    }
+}

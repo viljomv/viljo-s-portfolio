@@ -11,6 +11,17 @@ export class HeroComponent implements OnInit {
   private typingSpeed = 100;
   private currentLength = 0;
 
+  socialLinks = [
+    { icon: 'github', url: 'https://github.com/viljomv', label: 'GitHub' },
+    { icon: 'linkedin', url: 'https://linkedin.com/in/viljomv', label: 'LinkedIn' }
+  ];
+
+  featureCards = [
+    { title: 'Frontend', icon: '🎨', text: 'Modern & Responsive UI' },
+    { title: 'Backend', icon: '⚙️', text: 'Scalable & Secure APIs' },
+    { title: 'Design', icon: '✨', text: 'User-Centric Solutions' }
+  ];
+
   ngOnInit() {
     this.typeWriter();
   }
