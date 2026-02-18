@@ -10,38 +10,27 @@ This method hosts your site on GitHub and gives you a URL like `https://your-use
 - A GitHub account.
 - Git installed on your computer.
 
-### Steps
-1. **Initialize Git (if not already done)**:
+### Steps (Automated with GitHub Actions)
+1. **Push your code to GitHub**:
    ```bash
-   git init
    git add .
-   git commit -m "Initial commit"
+   git commit -m "Update portfolio"
+   git push origin main
    ```
 
-2. **Create a Repo on GitHub**:
-   - Go to [github.com/new](https://github.com/new).
-   - Name it `portfolio`.
-   - Click **Create repository**.
+2. **Wait for Deployment**:
+   Go to your GitHub repository and click on the **Actions** tab. You'll see a workflow named "Deploy to GitHub Pages" running.
 
-3. **Link your local project**:
-   - Copy the commands shown on GitHub (usually starting with `git remote add origin...`).
-   - Paste them in your terminal.
+3. **Verify Settings**:
+   Once the action finishes (turns green), go to **Settings** -> **Pages**. Ensure the "Build and deployment" source is set to **gh-pages** branch.
 
-4. **Install the deploy tool**:
-   In your VS Code terminal, run:
-   ```bash
-   npm install -g angular-cli-ghpages
-   ```
+4. **Done!**
+   Your site will be live at `https://viljomv.github.io/viljo-s-portfolio/` (or your custom domain if configured).
 
-5. **Deploy**:
-   Run this command (replace `your-repo-name` if it's not `portfolio`):
-   ```bash
-   ng build --base-href "https://<your-username>.github.io/portfolio/"
-   npx angular-cli-ghpages --dir=dist/portfolio
-   ```
+---
 
-6. **Done!**
-   Your site will be live at the URL shortly.
+## Option 2: Manual Deployment (Alternative)
+...
 
 ---
 
@@ -89,27 +78,25 @@ Similar to Netlify.
 
 ---
 
-## Option 4: Hostinger (Automatic via GitHub Actions)
+## Option 4: Hostinger (Automatic via GitHub Actions) [READY]
 
-This method automatically updates your Hostinger site whenever you push to GitHub.
+I have set up a workflow that automatically updates your Hostinger site whenever you push to the `main` branch.
 
-### Setup Steps
-1. **Get FTP Details**:
-   - Log in to your Hostinger hPanel.
-   - Go to **Files** -> **FTP Accounts**.
-   - Note down your FTP IP/Host, Username, and Password.
-
-2. **Add Secrets to GitHub**:
+### Final Setup Required
+1. **Add Secrets to GitHub**:
    - Go to your repository on GitHub.
    - Go to **Settings** -> **Secrets and variables** -> **Actions**.
    - Click **New repository secret** and add:
-     - `FTP_SERVER`: Your FTP Host/IP.
+     - `FTP_SERVER`: Your FTP Host/IP (from Hostinger hPanel).
      - `FTP_USERNAME`: Your FTP Username.
      - `FTP_PASSWORD`: Your FTP Password.
 
-3. **Deploy**:
-   - Push your code to the `main` branch.
-   - Go to the **Actions** tab in GitHub to see the progress.
+2. **Deploy**:
+   - Once secrets are added, any `git push origin main` will trigger the build and upload.
+   - Go to the **Actions** tab in GitHub to see the `Deploy to Hostinger` workflow progress.
+
+> [!IMPORTANT]
+> Ensure your Hostinger FTP account points to the `public_html` directory or update the `server-dir` in `.github/workflows/deploy-hostinger.yml`.
 
 ---
 

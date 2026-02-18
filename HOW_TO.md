@@ -41,5 +41,5 @@ This is a complete, modern Portfolio website built with Angular 16.
 
 To deploy to a live server (like Netlify, Vercel, or GitHub Pages):
 1. Run `npm run build`.
-2. The production files will be created in the `dist/portfolio` folder.
-3. Upload the contents of `dist/portfolio` to your host.
+2. The production files will be created in the `dist` folder.
+3. Upload the contents of `dist` to your host.
