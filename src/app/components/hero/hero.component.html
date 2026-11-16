@@ -1,32 +1,78 @@
 <section class="hero container">
-    <div class="social-sidebar">
-        <a *ngFor="let link of socialLinks" [href]="link.url" [attr.aria-label]="link.label" target="_blank"
-            class="social-link" appScrollReveal [delay]="'0.8s'">
-            <span class="dot"></span>
-            {{ link.label }}
-        </a>
-    </div>
-
     <div class="content">
-        <h1 class="title" appScrollReveal [delay]="'0s'">
-            Hi, I'm <span class="highlight">VILJO M V</span><br>
-            <span class="animated-text">A {{ typedText }}<span class="cursor">|</span></span>
+        <div class="status-badge" appScrollReveal [delay]="'0s'">
+            <span class="pulse"></span>
+            Available for new opportunities
+        </div>
+
+        <h1 class="title" appScrollReveal [delay]="'0.1s'">
+            Hi, I'm <span class="gradient-text">Viljo M V</span>
         </h1>
-        <p class="subtitle" appScrollReveal [delay]="'0.2s'">Building user-friendly, responsive, and beautiful web
-            applications with modern technologies.</p>
+
+        <p class="role" appScrollReveal [delay]="'0.2s'">
+            <span class="prompt">&gt;</span> {{ typedText }}<span class="cursor"></span>
+        </p>
+
+        <p class="subtitle" appScrollReveal [delay]="'0.3s'">
+            Full Stack Developer with 4+ years of experience crafting scalable, secure and
+            high-performance web applications with <strong>Angular</strong>, <strong>ASP.NET Core</strong>
+            and <strong>MSSQL</strong>.
+        </p>
+
         <div class="buttons" appScrollReveal [delay]="'0.4s'">
-            <a href="#projects" class="btn">View Projects</a>
-            <a href="#contact" class="btn btn-outline" style="margin-left: 1rem;">Contact Me</a>
+            <a href="#projects" class="btn">
+                View Projects
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+
+        <div class="meta" appScrollReveal [delay]="'0.5s'">
+            <div class="stats">
+                <div class="stat" *ngFor="let s of stats">
+                    <strong class="gradient-text">{{ s.value }}</strong>
+                    <span>{{ s.label }}</span>
+                </div>
+            </div>
+            <div class="socials">
+                <a *ngFor="let link of socialLinks" [href]="link.url" [attr.aria-label]="link.label" target="_blank"
+                    rel="noopener" class="social-link">
+                    <svg *ngIf="link.icon === 'github'" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+                    <svg *ngIf="link.icon === 'linkedin'" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+                    <svg *ngIf="link.icon === 'whatsapp'" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.82 14.12c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.93-4.36-.14-.19-1.18-1.57-1.18-2.99 0-1.42.74-2.12 1-2.41.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.29-.12.57.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.3 2.33 1.44.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.27.1 1.71.81 2 .95.29.14.48.22.55.34.07.12.07.7-.17 1.38Z"/></svg>
+                    <svg *ngIf="link.icon === 'instagram'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+            </div>
         </div>
     </div>
 
-    <div class="visual" appScrollReveal [delay]="'0.6s'">
-        <div class="circle"></div>
-        <div class="floating-cards">
-            <div *ngFor="let card of featureCards; let i = index" class="feature-card"
-                [style.animation-delay]="i * 0.5 + 's'">
-                <span class="icon">{{ card.icon }}</span>
-                <div class="card-text">
+    <div class="visual" appScrollReveal [delay]="'0.4s'">
+        <div class="glow"></div>
+        <div class="code-window">
+            <div class="window-bar">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="file">developer.ts</span>
+            </div>
+            <pre class="code"><code><span class="k">const</span> <span class="v">developer</span> = {{ '{' }}
+  <span class="p">name</span>: <span class="s">'Viljo M V'</span>,
+  <span class="p">role</span>: <span class="s">'Full Stack Developer'</span>,
+  <span class="p">location</span>: <span class="s">'Ernakulam, India'</span>,
+  <span class="p">frontend</span>: [<span class="s">'Angular'</span>, <span class="s">'TypeScript'</span>],
+  <span class="p">backend</span>: [<span class="s">'ASP.NET Core'</span>, <span class="s">'C#'</span>],
+  <span class="p">database</span>: <span class="s">'MSSQL'</span>,
+  <span class="p">currentWork</span>: <span class="s">'NBFC Gold Loan Management'</span>,
+  <span class="p">passion</span>: <span class="s">'Clean, scalable code'</span>
+{{ '}' }};</code></pre>
+        </div>
+
+        <div class="feature-grid">
+            <div class="float-chip" *ngFor="let card of featureCards">
+                <span class="chip-icon" [ngSwitch]="card.icon">
+                    <svg *ngSwitchCase="'frontend'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+                    <svg *ngSwitchCase="'backend'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+                    <svg *ngSwitchDefault viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5Z"/></svg>
+                </span>
+                <div>
                     <h4>{{ card.title }}</h4>
                     <p>{{ card.text }}</p>
                 </div>
@@ -34,12 +80,7 @@
         </div>
     </div>
 
-    <div class="scroll-indicator" appScrollReveal [delay]="'1s'">
-        <a href="#about">
-            <span>Scroll Down</span>
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-        </a>
-    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+        <div class="mouse"><div class="wheel"></div></div>
+    </a>
 </section>

@@ -1,22 +1,26 @@
-<header class="header">
+<header class="header" [class.scrolled]="isScrolled">
     <div class="container nav-container">
-        <div class="logo">Portfolio</div>
+        <a href="#" class="logo" (click)="closeMenu()">
+            <span class="logo-mark">V</span>
+            <span class="logo-text">Viljo<span class="dot">.</span></span>
+        </a>
 
-        <button class="mobile-toggle" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen"
-            aria-label="Toggle navigation">
+        <nav [class.open]="isMenuOpen">
+            <ul>
+                <li *ngFor="let link of links">
+                    <a [href]="'#' + link.id" [class.active]="activeSection === link.id" (click)="closeMenu()">
+                        {{ link.label }}
+                    </a>
+                </li>
+            </ul>
+            <a href="#contact" class="btn nav-cta" (click)="closeMenu()">Hire Me</a>
+        </nav>
+
+        <button class="mobile-toggle" [class.open]="isMenuOpen" (click)="toggleMenu()"
+            [attr.aria-expanded]="isMenuOpen" aria-label="Toggle navigation">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
-
-        <nav [class.open]="isMenuOpen">
-            <ul>
-                <li><a href="#about" (click)="closeMenu()">About</a></li>
-                <li><a href="#experience" (click)="closeMenu()">Experience</a></li>
-                <li><a href="#education" (click)="closeMenu()">Education</a></li>
-                <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
-                <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
-            </ul>
-        </nav>
     </div>
 </header>

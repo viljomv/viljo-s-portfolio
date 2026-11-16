@@ -1,35 +1,43 @@
 <section id="about" class="container section">
     <div class="section-header" appScrollReveal>
-        <h2 class="section-title">About Me</h2>
-        <div class="line"></div>
+        <span class="section-eyebrow">01 &middot; About</span>
+        <h2 class="section-title">Engineering <span class="gradient-text">reliable</span> products</h2>
     </div>
+
     <div class="about-content">
-        <div class="about-text" appScrollReveal [delay]="'0.2s'">
-            <p>
-                Full Stack Developer with 3+ years of experience in Angular, ASP.NET Core, and MSSQL, specializing in
+        <div class="about-text" appScrollReveal [delay]="'0.15s'">
+            <p class="lead">
+                Full Stack Developer with 4+ years of experience in Angular, ASP.NET Core, and MSSQL, specializing in
                 building scalable, secure, and high-performance web applications and REST APIs.
             </p>
             <p>
-                Proven expertise in developing enterprise-grade systems for the NBFC domain, with a strong focus on
-                performance, reliability, and maintainability.
+                Currently working on an enterprise <strong>NBFC Gold Loan Management</strong> application used across
+                branches to manage the end-to-end gold loan lifecycle, with a strong focus on performance, security,
+                reliability, and maintainability.
             </p>
+
+            <div class="highlights">
+                <div class="highlight" *ngFor="let h of highlights">
+                    <span class="h-icon" [ngSwitch]="h.icon">
+                        <svg *ngSwitchCase="'code'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+                        <svg *ngSwitchCase="'shield'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+                        <svg *ngSwitchDefault viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </span>
+                    <div>
+                        <h4>{{ h.title }}</h4>
+                        <p>{{ h.text }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="skills" appScrollReveal [delay]="'0.4s'">
-            <h3>Skills</h3>
-            <div class="skill-tags">
-                <span class="skill-item">Angular</span>
-                <span class="skill-item">TypeScript</span>
-                <span class="skill-item">ASP.NET Core</span>
-                <span class="skill-item">MSSQL</span>
-                <span class="skill-item">HTML5 & CSS3</span>
-                <span class="skill-item">SCSS</span>
-                <span class="skill-item">Bootstrap</span>
-                <span class="skill-item">Material UI</span>
-                <span class="skill-item">GitLab</span>
-                <span class="skill-item">Postman</span>
-                <span class="skill-item">Project Management</span>
-                <span class="skill-item">Leadership</span>
-                <span class="skill-item">Problem Solving</span>
+
+        <div class="skills card" appScrollReveal [delay]="'0.3s'">
+            <h3>Tech Stack &amp; Skills</h3>
+            <div class="skill-group" *ngFor="let group of skillGroups">
+                <span class="group-label">{{ group.label }}</span>
+                <div class="skill-tags">
+                    <span class="skill-item" *ngFor="let s of group.items">{{ s }}</span>
+                </div>
             </div>
         </div>
     </div>

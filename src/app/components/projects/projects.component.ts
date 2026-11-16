@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-  projects = [
+  projects: { title: string; status?: string; description: string; tags: string[]; link: string }[] = [
     {
-      title: 'NBFC Domain System',
-      description: 'Enterprise-grade system for NBFC domain. Designed scalable backend APIs and stored procedures.',
-      tags: ['ASP.NET Core', 'MSSQL', 'C#', 'SQL'],
+      title: 'NBFC Gold Loan Management',
+      status: 'Currently Working On',
+      description: 'Enterprise multi-branch application used across branches to manage the end-to-end gold loan application and lifecycle, built with Angular, scalable ASP.NET Core APIs, and MSSQL.',
+      tags: ['Angular', 'ASP.NET Core', 'MSSQL', 'C#', 'SQL'],
       link: '#'
     },
     {
@@ -39,6 +40,10 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit() {
     this.filteredProjects = this.projects;
+  }
+
+  trackByTitle(_: number, project: { title: string }) {
+    return project.title;
   }
 
   filter(category: string) {

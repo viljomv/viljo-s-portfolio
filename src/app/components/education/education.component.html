@@ -1,13 +1,20 @@
 <section id="education" class="section container">
     <div class="section-header" appScrollReveal>
-        <h2 class="section-title">Education</h2>
-        <div class="line"></div>
+        <span class="section-eyebrow">03 &middot; Education</span>
+        <h2 class="section-title">Academic <span class="gradient-text">background</span></h2>
     </div>
+
     <div class="education-grid">
-        <div class="card" *ngFor="let edu of education; let i = index" appScrollReveal [delay]="i * 0.2 + 's'">
+        <div class="card edu-card" *ngFor="let edu of education; let i = index" appScrollReveal
+            [delay]="i * 0.15 + 's'">
+            <div class="edu-head">
+                <span class="edu-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                </span>
+                <span class="year">{{ edu.year }}</span>
+            </div>
             <h3>{{ edu.degree }}</h3>
             <h4>{{ edu.institution }}</h4>
-            <span class="year">{{ edu.year }}</span>
         </div>
     </div>
 </section>

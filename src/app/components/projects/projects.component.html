@@ -1,25 +1,37 @@
 <section id="projects" class="section container">
-    <div class="section-header" appScrollReveal>
-        <h2 class="section-title">My Projects</h2>
-        <div class="line"></div>
-    </div>
+    <div class="section-header head-row" appScrollReveal>
+        <div>
+            <span class="section-eyebrow">04 &middot; Projects</span>
+            <h2 class="section-title">Things I've <span class="gradient-text">built</span></h2>
+        </div>
 
-    <div class="filters" appScrollReveal [delay]="'0.2s'">
-        <button *ngFor="let cat of categories" class="filter-btn" [class.active]="activeCategory === cat"
-            (click)="filter(cat)">
-            {{ cat }}
-        </button>
+        <div class="filters">
+            <button *ngFor="let cat of categories" class="filter-btn" [class.active]="activeCategory === cat"
+                (click)="filter(cat)">
+                {{ cat }}
+            </button>
+        </div>
     </div>
 
     <div class="grid">
-        <div class="card" *ngFor="let project of filteredProjects; let i = index" appScrollReveal
-            [delay]="i * 0.1 + 0.3 + 's'">
+        <article class="card project-card" *ngFor="let project of filteredProjects; let i = index; trackBy: trackByTitle"
+            appScrollReveal [delay]="i * 0.1 + 's'">
+            <div class="project-top">
+                <span class="folder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2Z"/></svg>
+                </span>
+                <span class="status-pill" *ngIf="project.status"><span class="dot"></span>{{ project.status }}</span>
+                <a [href]="project.link" class="ext" aria-label="Open project">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+                </a>
+            </div>
             <h3>{{ project.title }}</h3>
             <p>{{ project.description }}</p>
             <div class="tags">
                 <span *ngFor="let tag of project.tags">{{ tag }}</span>
             </div>
-            <a [href]="project.link" class="project-link">View Details &rarr;</a>
-        </div>
+        </article>
     </div>
+
+    <p class="empty" *ngIf="filteredProjects.length === 0">No projects in this category yet.</p>
 </section>
